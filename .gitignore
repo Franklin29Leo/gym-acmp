@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+.env
+backups/
+~$*
+.env.example
+CLAUDE.md
+DEPLOY.md
+gimnasio.sql

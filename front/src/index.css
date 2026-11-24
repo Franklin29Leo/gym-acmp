@@ -1,0 +1,115 @@
+:root {
+  --verde: #176b45;
+  --verde-2: #017d51;
+  --verde-osc: #10452f;
+  --oro: #e6d868;
+  --rojo: #b42318;
+  --fondo: #f4f7f5;
+  --card: #ffffff;
+  --texto: #1b2a22;
+  --muted: #5e6f66;
+  --borde: #d9e3dd;
+  font-family: system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); }
+h1 { font-size: 1.5rem; margin: 0; color: var(--verde-osc); }
+h2 { font-size: 1.1rem; margin: 0 0 12px; color: var(--verde-osc); }
+h3 { margin: 0; font-size: 1.05rem; }
+code { background: #eef3f0; padding: 1px 4px; border-radius: 4px; font-size: .85em; }
+
+.topbar { background: var(--verde-osc); color: #fff; border-bottom: 4px solid var(--oro); }
+.topbar-in { max-width: 1200px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.marca { display: flex; align-items: center; gap: 10px; }
+.marca strong { display: block; font-size: 1.1rem; }
+.marca span { font-size: .8rem; opacity: .8; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav a { color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-weight: 500; }
+nav a:hover { background: rgba(255,255,255,.1); }
+nav a.activo { background: var(--oro); color: var(--verde-osc); }
+
+.contenido { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+.card { background: var(--card); border: 1px solid var(--borde); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.encabezado { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.muted { color: var(--muted); margin: 2px 0; }
+.small { font-size: .85rem; }
+
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; color: var(--texto); min-width: 0; }
+input:focus, select:focus { outline: 2px solid var(--verde-2); outline-offset: 0; border-color: var(--verde-2); }
+.btn { font: inherit; font-weight: 600; background: var(--verde); color: #fff; border: 0; border-radius: 8px; padding: 9px 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn:hover { background: var(--verde-2); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn.sec { background: #fff; color: var(--verde); border: 1px solid var(--verde); }
+.btn.sec:hover { background: #eef6f1; }
+.link { background: none; border: 0; color: var(--verde-2); cursor: pointer; font: inherit; padding: 4px 6px; font-weight: 500; }
+.link:hover { text-decoration: underline; }
+.link.peligro { color: var(--rojo); }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.kpi { background: var(--card); border: 1px solid var(--borde); border-left: 5px solid var(--verde); border-radius: 10px; padding: 12px 14px; }
+.kpi span { display: block; color: var(--muted); font-size: .85rem; }
+.kpi strong { font-size: 1.6rem; color: var(--verde-osc); }
+.kpi.oro { border-left-color: var(--oro); }
+.kpi.rojo { border-left-color: var(--rojo); }
+
+.buscador label { font-weight: 600; color: var(--verde-osc); }
+.buscador-fila { display: flex; gap: 12px; margin: 8px 0; align-items: flex-end; flex-wrap: wrap; }
+.buscador-fila .grande { flex: 1 1 320px; font-size: 1.3rem; padding: 14px 16px; border-width: 2px; }
+.campo-fecha { display: flex; flex-direction: column; }
+.campo-fecha label { font-size: .8rem; font-weight: 500; color: var(--muted); }
+
+.resultados { display: grid; gap: 12px; }
+.cliente { background: var(--card); border: 1px solid var(--borde); border-left: 8px solid var(--verde); border-radius: 12px; padding: 16px 18px; }
+.cliente.c-POR_VENCER { border-left-color: var(--oro); }
+.cliente.c-VENCIDO, .cliente.c-ANULADO { border-left-color: var(--rojo); }
+.cliente-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.periodo { display: flex; align-items: center; gap: 16px; margin: 12px 0 6px; flex-wrap: wrap; }
+.periodo span { display: block; font-size: .8rem; color: var(--muted); }
+.periodo strong { font-size: 1.15rem; }
+.flecha { color: var(--muted); font-size: 1.3rem; }
+.dias { margin-left: auto; font-weight: 600; color: var(--verde-osc); }
+.c-VENCIDO .dias, .c-ANULADO .dias { color: var(--rojo); }
+
+.badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: .8rem; letter-spacing: .02em; white-space: nowrap; }
+.b-VIGENTE { background: var(--verde); color: #fff; }
+.b-POR_VENCER { background: var(--oro); color: var(--verde-osc); }
+.b-VENCIDO { background: var(--rojo); color: #fff; }
+.b-ANULADO { background: #e5e7eb; color: #4b5563; }
+
+.tabla-wrap { padding: 0; overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.tabla th { text-align: left; background: #eef6f1; color: var(--verde-osc); padding: 9px 10px; font-weight: 600; white-space: nowrap; }
+.tabla td { padding: 8px 10px; border-top: 1px solid var(--borde); }
+.tabla tbody tr:hover { background: #f8fbf9; }
+.tabla .num { text-align: right; white-space: nowrap; }
+.tabla.mini { margin-top: 10px; font-size: .82rem; }
+.tabla tr.clic { cursor: pointer; }
+.fila-acciones { white-space: nowrap; }
+.vacio { text-align: center; color: var(--muted); padding: 24px; }
+
+.filtros { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filtros > input { flex: 1 1 220px; }
+.filtros label { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; }
+.paginacion { display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
+.paginacion .muted { margin-right: auto; }
+
+.alerta { padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; }
+.alerta.error { background: #fdecea; color: var(--rojo); border: 1px solid #f5c2bd; }
+
+.modal-fondo { position: fixed; inset: 0; background: rgba(16, 69, 47, .45); display: grid; place-items: center; padding: 16px; z-index: 10; }
+.modal { width: min(720px, 100%); max-height: 92vh; overflow-y: auto; margin: 0; }
+.grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-form label { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; font-weight: 500; color: var(--muted); }
+.grid-form .span2 { grid-column: span 2; }
+.acciones { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+.zona { border: 2px dashed var(--verde-2); border-radius: 12px; padding: 32px; text-align: center; cursor: pointer; display: flex; flex-direction: column; gap: 4px; background: #f8fbf9; }
+.zona.sobre { background: #fbf8dc; border-color: var(--oro); }
+
+@media (max-width: 640px) {
+  .grid-form { grid-template-columns: 1fr; }
+  .grid-form .span2 { grid-column: auto; }
+  .dias { margin-left: 0; width: 100%; }
+}
